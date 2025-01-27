@@ -25,7 +25,7 @@ public class PrintAllDivisor {
             }
         }
         // it is sorting the number of divisors list
-        // so the time taken is --> O (no of divisors * log(no of divisors))
+        // so the time taken is -->  O (no of divisors * log(no of divisors))
         Collections.sort(l);
         return l;
     }
