@@ -17,7 +17,8 @@ package Daily_DSA.Basic_Hashing;
 // TC --> O(n*n)
 // SC --> o(n)
 
-public class PracticeQ1 {
+import java.util.*;
+class PracticeQ2 {
     static void Frequency(int[] arr,int len){
         boolean[] visited = new boolean[len];
 
@@ -56,7 +57,7 @@ public class PracticeQ1 {
 
 
 
-import java.util.*;
+
 public class PracticeQ1 {
     public static void main(String[] args) {
         int[] arr = {10,5,10,15,10,5};
