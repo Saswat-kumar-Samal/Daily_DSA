@@ -56,25 +56,25 @@ public class PracticeQ1 {
 
 
 
-//import java.util.*;
-//public class PracticeQ1 {
-//    public static void main(String[] args) {
-//        int[] arr = {10,5,10,15,10,5};
-//        Map<Integer,Integer> map = new HashMap<>();
-//        for(int i=0; i < arr.length; i++){
-//            int key = arr[i];
-//            int frqe = 0;
-//            if (map.containsKey(key)){
-//                frqe = map.get(key);
-//            }
-//            frqe++;
-//            map.put(key,frqe);
-//        }
-//
-//
-//        // printing the hashmap
-//        map.forEach((k,v) -> {
-//            System.out.println(k+" occurs "+v+" times in the array");
-//        });
-//    }
-//}
+import java.util.*;
+public class PracticeQ1 {
+    public static void main(String[] args) {
+        int[] arr = {10,5,10,15,10,5};
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i=0; i < arr.length; i++){
+            int key = arr[i];
+            int frqe = 0;
+            if (map.containsKey(key)){
+                frqe = map.get(key);
+            }
+            frqe++;
+            map.put(key,frqe);
+        }
+
+
+        // printing the hashmap
+        map.forEach((k,v) -> {
+            System.out.println(k+" occurs "+v+" times in the array");
+        });
+    }
+}
