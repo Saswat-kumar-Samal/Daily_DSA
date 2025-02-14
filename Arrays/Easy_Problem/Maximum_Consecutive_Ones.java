@@ -7,6 +7,7 @@ public class Maximum_Consecutive_Ones {
     /// I think we should not go for brute we directly solve by optimal sol
     /// time --> O(n)
     ///  space --> O(1)
+
     static int OptimalAns(int[] arr){
         int n =arr.length;
         int maxi=0;
