@@ -64,13 +64,13 @@ public class Rearrange_Array_Elements_By_Sign {
             }
         }
 
-        if (pos.size() > neg.size()){
+        if (pos.size() > neg.size()){  
             for (int i=0; i < neg.size(); i++){
                 arr[2 * i] = pos.get(i);
                 arr[2 * i +1] = neg.get(i);
             }
-            int idx = neg.size() * 2;
-            for (int i = neg.size() ; i <  pos.size() ;i++){
+            int idx = neg.size() * 2;         
+            for (int i = neg.size() ; i <  pos.size() ;i++){    // if elements are remain in the postive list bcz pos.size() > neg.size()
                 arr[idx++] = pos.get(i);
             }
         }else{
@@ -79,7 +79,7 @@ public class Rearrange_Array_Elements_By_Sign {
                 arr[2 * i +1] = neg.get(i);
             }
             int idx  = pos.size()*2;
-            for (int i=pos.size() ; i < neg.size() ; i++){
+            for (int i=pos.size() ; i < neg.size() ; i++){     // if elements are remain in the negative list bcz neg.size() > pos.size()
                 arr[idx++] = neg.get(i);
             }
         }
