@@ -79,7 +79,7 @@ public class Rearrange_Array_Elements_By_Sign {
                 arr[2 * i +1] = neg.get(i);
             }
             int idx  = pos.size()*2;
-            for (int i=pos.size() ; i < neg.size() ; i++){     // if elements are remain in the negative list bcz neg.size() > pos.size()
+            for (int i=pos.size() ; i < neg.size() ; i++){     // if elements are remain in the negative list bcz neg.size()  >  pos.size()
                 arr[idx++] = neg.get(i);
             }
         }
