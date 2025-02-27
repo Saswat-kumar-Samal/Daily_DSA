@@ -15,6 +15,8 @@ public class Next_Permutation {
     ///  this optimal solution
     /// time --  nearly  O(3n)
     /// space -- O(n) we are changing in the given array
+    /// input arr = {2,1,5,4,3,0,0}
+    /// output arr = {2 3 0 0 1 4 5}
     static void Reverse(int[] nums , int start , int end){
         while(start <= end){
             int temp = nums[start];
@@ -24,7 +26,7 @@ public class Next_Permutation {
             end--;
         }
     }
-    public void nextPermutation(int[] nums) {
+    static void nextPermutation(int[] nums) {
         int n = nums.length;
         // step - 1 --> find the longest prefix , means the break point
         int idx = -1;
@@ -56,6 +58,10 @@ public class Next_Permutation {
         Reverse(nums , idx+1 , n-1);
     }
     public static void main(String[] args) {
-
+        int[] nums = {2,1,5,4,3,0,0};
+        nextPermutation(nums);
+        for (int ele : nums){
+            System.out.print(ele+ " ");
+        }
     }
 }
