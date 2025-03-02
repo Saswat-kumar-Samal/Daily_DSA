@@ -62,8 +62,8 @@ public class Longest_Consecutive_Sequence {
 
 
     /// this is the Optimal solution by using the set data structure
-    /// time -->
-    /// space -->
+    /// time --> nearly O(3 * n)
+    /// space --> O(n) for using the set data structure
     static int OptimalSolution(int[] nums){
         int n =nums.length;
         if(n==0){
