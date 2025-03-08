@@ -36,7 +36,7 @@ public class Spiral_Matrix {
                     list.add(matrix[i][left]);
                 }
                 left++;
-            } 
+            }
         }
         return list;
     }
