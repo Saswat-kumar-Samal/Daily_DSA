@@ -61,12 +61,93 @@ public class BasicUnderStanding {
         return "No";
     }
 
+
+    ///  Deleting the nodes from the LinkedList
+
+    /// removing the head of the LinkedList
+    static Node removeHead(Node head){
+        if (head == null) return head;
+        head = head.next;
+        return head;
+    }
+
+
+    ///  remove the tail of the LinkedList
+    static Node removeTail(Node head){
+        if (head == null || head.next == null) return head;
+        Node temp = head;
+        while (temp.next.next != null) temp = temp.next;
+        temp.next = null;
+        return head;
+    }
+
+
+    ///  removing the kth element in the LinkedList
+    /// time -> O(k)  no of k it will run
+    static Node removeKthElement(Node head, int k){
+        if (head == null) return head;
+        if (k == 1){
+            head = head.next;
+            return head;
+        }
+        int cnt = 0;
+        Node temp = head;
+        Node prev = null;
+        while (temp != null){
+            cnt++;
+            if (cnt == k){
+                prev.next = temp.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
+    }
+
+
+    ///  delete the node by value
+    /// time - O(n)
+    static Node removeNodeByValue(Node head, int val){
+        if (head == null) return head;
+        if (head.data == val){
+            head = head.next;
+            return head;
+        }
+        Node temp = head;
+        Node prev = null;
+        while (temp != null){
+            if (temp.data == val){
+                prev.next = temp.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
+    }
+
+
+
+    ///  inserting nodes in the linkedList
+
+    /// inserting in the head of the LinkedList
+    static Node InsertHead(Node head, int val){
+        Node temp = new Node(val, head);
+        return temp;
+    }
     public static void main(String[] args) {
         int[] arr = {12,15,19,5,16,45};
         Node head = ConvertToLinkedList(arr);
         //System.out.println(head.data);
-        //TraversingLinkedList(head);
+        TraversingLinkedList(head);
         //System.out.println(LengthOfLinkedList(head));
-        System.out.println(SearchInLinkedList(head, 56));
+        //System.out.println(SearchInLinkedList(head, 56));
+        //System.out.println(removeHead(head).data);
+        //head = removeHead(head);
+        //TraversingLinkedList(removeTail(head));
+        head = InsertHead(head, 60);
+        TraversingLinkedList(head);
+
     }
 }
