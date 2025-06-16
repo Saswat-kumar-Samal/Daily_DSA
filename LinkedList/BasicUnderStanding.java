@@ -136,6 +136,72 @@ public class BasicUnderStanding {
         Node temp = new Node(val, head);
         return temp;
     }
+
+
+
+    /// adding the element in the last of the LinkedList
+    static Node InsertLast(Node head, int val){
+        if (head == null){
+            return new Node(val);
+        }
+        Node newNode = new Node(val);
+        Node temp = head;
+        while (temp.next != null){
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        return head;
+    }
+
+
+    /// inserting at given Kth position
+    static Node InsertAtKthPos(Node head, int val ,int k){
+        if (head == null){
+            if (k == 1){
+                return new Node(val);
+            }else{
+                return head;
+            }
+        }
+        if (k == 1){
+            return InsertHead(head, val);
+        }
+        int cnt = 0;
+        Node temp = head;
+        while (temp != null){
+            cnt++;
+            if (cnt == k-1){
+                Node newNode = new Node(val);
+                newNode.next = temp.next;
+                temp.next = newNode;
+                break;
+            }
+            temp = temp.next;
+        }
+        return head;
+    }
+
+
+
+    ///  insert the value before the value 'val'
+    static Node InsertBeforeVal(Node head, int ele, int val){
+        if (head == null){
+            return null;
+        }
+        if (head.data == val){
+            return new Node(ele, head);
+        }
+        Node temp = head;
+        while (temp.next != null){
+            if (temp.next.data == val){
+                Node newNode = new Node(ele, temp.next);
+                temp.next = newNode;
+                break;
+            }
+            temp = temp.next;
+        }
+        return head;
+    }
     public static void main(String[] args) {
         int[] arr = {12,15,19,5,16,45};
         Node head = ConvertToLinkedList(arr);
@@ -146,7 +212,7 @@ public class BasicUnderStanding {
         //System.out.println(removeHead(head).data);
         //head = removeHead(head);
         //TraversingLinkedList(removeTail(head));
-        head = InsertHead(head, 60);
+        head = InsertBeforeVal(head, 100,12);
         TraversingLinkedList(head);
 
     }
