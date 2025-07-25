@@ -101,11 +101,39 @@ public class DoublyLinkedListBasic{
         node.next = node.prev = null;
         return head;
     }
+
+
+    ///  Insertion in doubly linked list
+
+    static NodeDoubly InsertBeforeHead(NodeDoubly head, int val){
+        if (head == null) return null;
+        NodeDoubly newNode = new NodeDoubly(val);
+        newNode.next = head;
+        head.prev = newNode;
+        head = head.prev;
+        return head;
+    }
+
+
+    static NodeDoubly InsertBeforeTail(NodeDoubly head, int val){
+        if (head == null) return null;
+        if (head.next == null){
+            return InsertBeforeHead(head, val);
+        }
+        NodeDoubly temp = head;
+        while (temp.next != null){
+            temp = temp.next;
+        }
+        NodeDoubly backEle = temp.prev;
+        NodeDoubly newNode = new NodeDoubly(val, temp, backEle);
+        backEle.next = temp.prev = newNode;
+        return head;
+    }
     public static void main(String[] args) {
         int[] arr = {12,5,6,78,9,5};
         NodeDoubly head = ConvertToDoublyLinkedList(arr);
         PrintDLL(head);
-        PrintDLL(DeleteKthElement(head, 3));
+        PrintDLL(InsertBeforeTail(head, 200));
     }
 }
 
